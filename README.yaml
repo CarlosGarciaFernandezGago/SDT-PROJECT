@@ -1,0 +1,15 @@
+## How to run the system
+
+Requirements:
+- Docker
+- Docker Compose
+
+Steps:
+1. Clone the repository
+2. Run:
+   docker compose build
+   docker compose up
+
+Services:
+- Eureka: http://localhost:8761
+- API Gateway: http://localhost:8080

@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
+
+  user-service:
+    build: ./user-service
+    ports:
+      - "8081:8081"
+
+  bike-service:
+    build: ./bike-service
+    ports:
+      - "8082:8082"
+
+  trip-service:
+    build: ./trip-service
+    ports:
+      - "8083:8083"
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - user-service
+      - bike-service
+      - trip-service
+
+
